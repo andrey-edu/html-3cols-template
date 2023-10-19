@@ -1,0 +1,60 @@
+/* TODO Сделать адаптив */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+:root {
+  --callout-w: 200px;
+  /* --left-callout-w: 200px; */
+  /* --right-callout-w: 200px; */
+  --col-gap: 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: var(--col-gap);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: var(--callout-w) 1fr var(--callout-w);
+  gap: var(--col-gap);
+}
+
+.block {
+  position: relative;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.callout {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--callout-w);
+}
+
+.callout_left {
+  left: calc(-1 * (var(--callout-w) + var(--col-gap)));
+}
+
+.callout_right {
+  right: calc(-1 * (var(--callout-w) + var(--col-gap)));
+}
+
+.callout-image {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.callout-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
